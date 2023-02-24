@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'pepperoni',
+    price: 6.26,
+    category: 'entree',
+    popularity: 2,
+    rating: 7.8,
+    tags: ['pepperoni', 'large', 'handtossed']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags)
 
 /*
     Third, destructure the price off of the
@@ -63,8 +70,9 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+let newPrice = price
+console.log(newPrice)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,49 @@
 */
 
 //CODE HERE
+let foodArr = [
+    hotdogs = {
+        name: 'Ball Park Frank',
+        price: 10,
+        category: 'entree',
+        popularity: 1,
+        rating: 10,
+        tags: ['hotdog', 'game food', 'baseball', 'america']
+    },
+    chicken = {
+        name: 'Tenders',
+        price: 5,
+        category: 'appetizer',
+        popularity: 8,
+        rating: 8,
+        tags: ['small', 'kids', 'finger food']
+    },
+    beef = {
+        name: 'Prime-Rib',
+        price: 20,
+        category: 'entree',
+        popularity: 6,
+        rating: 11,
+        tags: ['fancy', 'huge', 'expensive']
+    },
+    fish = {
+        name: 'salmon',
+        price: 13,
+        category: 'entree',
+        popularity: 10,
+        rating: 10.5,
+        tags: ['fish', 'expensive', 'tasty']
+    },
+   pasta = {
+        name: 'spaghetti',
+        price: 9.99,
+        category: 'entree',
+        popularity: 11,
+        rating: 2,
+        tags: ['italian', 'noodles', 'meatballs']
+    }
 
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,9 +156,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((element) => element.tags.includes('noodles'))
 
-
+console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +200,18 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type, foodArr) {
+    let filteredArray = [];
+  
+    if (type === 'above') {
+      filteredArray = foodArr.filter((food) => food[property] > number);
+    } else if (type === 'below') {
+      filteredArray = foodArr.filter((food) => food[property] < number);
+    }
+  
+    return filteredArray;
+  }
+  
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +221,5 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('price', 10, 'above', foodArr))
