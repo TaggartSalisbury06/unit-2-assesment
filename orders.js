@@ -31,7 +31,7 @@
 
 //CODE HERE
 class Ticket {
-    constructor(items, orderTime, customerId, status) {
+    constructor(items, orderTime, customerId) {
         this.customerId = customerId
         this.items = items
         this.orderTime = orderTime
@@ -57,7 +57,7 @@ class Ticket {
 */
 
 //CODE HERE
-let firstTicket = new Ticket ("pizza, bread, and soda", '7:03 pm', 575)
+let firstTicket = new Ticket (["pizza", "bread", "soda"], '7:03 pm', 575)
 
 console.log(firstTicket)
 

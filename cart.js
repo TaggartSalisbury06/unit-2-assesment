@@ -35,7 +35,7 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = cart.reduce((arr, curr, inisitalVal) => arr + curr.price, 0)
+const summedPrice = cart.reduce((arr, curr) => arr + curr.price, 0)
 
 console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
@@ -54,14 +54,19 @@ console.log(summedPrice)
 */
 
 //CODE HERE
+// function calcFinalPrice(cartTotal, couponValue, tax) {
+//     let plusTax = cartTotal * tax + cartTotal
+//     let plusCoupon = plusTax * couponValue
+//     let finalTotal = plusTax - plusCoupon
+//     return finalTotal
+// }
 function calcFinalPrice(cartTotal, couponValue, tax) {
-    let plusTax = cartTotal * tax + cartTotal
-    let plusCoupon = plusTax * couponValue
-    let finalTotal = plusTax - plusCoupon
-    return finalTotal
+    let subTotal = cartTotal - couponValue;
+    let total =  subTotal * tax + subTotal
+    return total.toFixed(2)
 }
 
-console.log(calcFinalPrice(26, .25, .06))
+console.log(calcFinalPrice(summedPrice, 2.00, .06))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -84,11 +89,10 @@ console.log(calcFinalPrice(26, .25, .06))
 
 /*
 
-    the object should have name, items, prices, and wether they're a regular or not
-    the name need to be there so we know who the customer is 
-    the items are important so we know what the customer order/bought
-    the prices are important so we know the exact price the customer owes/payed
-    Knowing wther your customers are regulars is important so you know if theyre using the deals or not or if they're teling people they know
+    The object should have firstName, lastName, customerId, and historicalPurchaseCount
+    The firstName and lastName needs to be there so we know who the customer is, this will be a string
+    The customerId will uniquely identify each customer, this will be a integer
+    The historicalPurchaseCount will track how many times they've purchased a meal for the purpose of a fequent visitor program, this will be an integer
 
 */
 
@@ -100,8 +104,8 @@ console.log(calcFinalPrice(26, .25, .06))
 //CODE HERE
 
 const customer = {
-    name: "Jane",
-    regular: true,
-    item: "spaghetti",
-    price: 15.99
+    firstName: "Jane",
+    lastName: "Doe",
+    historicalPurchaseCount: 5,
+    customerId: 3456
 }

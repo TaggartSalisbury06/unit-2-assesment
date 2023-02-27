@@ -24,7 +24,7 @@
 //CODE HERE
 const greetUser = (username) => `Welcome back, ${username}`
 
-console.log('Andrew')
+console.log(greetUser('Andrew'))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -57,10 +57,11 @@ function canWeDeliver(zipCode) {
         }
     }
 
-    return "Sorry, we can\'t deliver to that address"
+    return "Sorry, we can't deliver to that address"
 }
 
-console.log(canWeDeliver(8))
+console.log(canWeDeliver(84606))
+console.log(canWeDeliver(85205))
 /* 
     Problem 2 Continued
 
@@ -86,6 +87,7 @@ function canWeDeliverTwo(zipCode) {
     return "Sorry, we can't deliver to that address"
 }
 console.log(canWeDeliverTwo(85213))
+console.log(canWeDeliverTwo(50000))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some

@@ -31,7 +31,6 @@ class Employee {
     }
 }
 
-//emp1.getSchedule()
 
 /*
     Create a new instance of your class.
@@ -44,7 +43,7 @@ class Employee {
 */
 
 //CODE HERE
-let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
+let empOne = new Employee('Jess', ['weekday mornings', 'weekday afternoons'])
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -97,7 +96,7 @@ class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
 
-        this.employees = [employees]
+        this.employees = employees
     }
     getEmployees() {
         console.log(`${this.name} manages ${this.employees}`)
@@ -121,7 +120,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-let manager = new Manager ('Winston', 'weekday mornings weekday afternoons', 'Cece and Schmidt')
+let manager = new Manager ('Winston', ['weekday mornings', 'weekday afternoons'], ['Cece', 'Schmidt'])
 console.log(manager)
 /*
     Call the `getEmployees` method on the

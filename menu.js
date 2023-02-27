@@ -60,7 +60,7 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
-console.log(pizza.tags)
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -70,8 +70,7 @@ console.log(pizza.tags)
 */
 
 //CODE HERE
-let {price} = pizza
-let newPrice = price
+let {price: newPrice} = pizza
 console.log(newPrice)
 /*
     Fourth, and last, destructure the category
@@ -81,8 +80,8 @@ console.log(newPrice)
 */
 
 //CODE HERE
-let {category} = pizza
-console.log(category)
+let {category: localCategory} = pizza
+console.log(localCategory)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -98,7 +97,7 @@ console.log(category)
 
 //CODE HERE
 let foodArr = [
-    hotdogs = {
+    {
         name: 'Ball Park Frank',
         price: 10,
         category: 'entree',
@@ -106,7 +105,7 @@ let foodArr = [
         rating: 10,
         tags: ['hotdog', 'game food', 'baseball', 'america']
     },
-    chicken = {
+    {
         name: 'Tenders',
         price: 5,
         category: 'appetizer',
@@ -114,15 +113,15 @@ let foodArr = [
         rating: 8,
         tags: ['small', 'kids', 'finger food']
     },
-    beef = {
+    {
         name: 'Prime-Rib',
         price: 20,
         category: 'entree',
         popularity: 6,
-        rating: 11,
+        rating: 10,
         tags: ['fancy', 'huge', 'expensive']
     },
-    fish = {
+    {
         name: 'salmon',
         price: 13,
         category: 'entree',
@@ -130,7 +129,7 @@ let foodArr = [
         rating: 10.5,
         tags: ['fish', 'expensive', 'tasty']
     },
-   pasta = {
+    {
         name: 'spaghetti',
         price: 9.99,
         category: 'entree',
@@ -207,6 +206,8 @@ function filterByProperty(property, number, type, foodArr) {
       filteredArray = foodArr.filter((food) => food[property] > number);
     } else if (type === 'below') {
       filteredArray = foodArr.filter((food) => food[property] < number);
+    } else {
+        console.log('Unknown type')
     }
   
     return filteredArray;
